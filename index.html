@@ -53,13 +53,12 @@
         var data = []; 
         var labels = [];
         var cash = parseInt($('#cash').val()) + parseInt($('#extra').val());
-        for (var i = 1; i <= 18; i++) {
+        for (var i = 0; i <= 18; i++) {
             cash = cash - parseInt($('#rent').val()) - parseInt($('#payroll').val()) - parseInt($('#other').val());
             cash = cash + parseInt($('#rev').val());
             data.push(parseInt(cash));
             labels.push(i);
         }
-        console.log(data)
         myChart.data.datasets[0].data = data;
         myChart.data.labels = labels;
         myChart.update();
